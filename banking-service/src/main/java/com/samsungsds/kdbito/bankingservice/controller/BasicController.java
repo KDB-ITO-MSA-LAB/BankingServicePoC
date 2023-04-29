@@ -8,7 +8,7 @@ public class BasicController {
 	
 	@GetMapping("/msalab")
 	public String defaultFunction() {
-		//테스트 주석단다.
+		//테스트 주석단다. 이건또 뭐야..
 		return "welcome";
 	} 
 
