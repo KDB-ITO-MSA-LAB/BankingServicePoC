@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>계좌 상세 정보</title>
+</head>
+<body>
+<h1>계좌 상세 정보</h1>
+<table>
+    <tr>
+        <th>고객명</th>
+        <td th:text="${account.customerName}"></td>
+    </tr>
+    <tr>
+        <th>계좌 별칭</th>
+        <td th:text="${account.accountAlias}"></td>
+    </tr>
+    <tr>
+        <th>잔액</th>
+        <td th:text="${account.balance}"></td>
+    </tr>
+    <tr>
+        <th>비고</th>
+        <td th:text="${account.remark}"></td>
+    </tr>
+</table>
+<div>
+    <a href="/accounts">계좌 목록 돌아가기</a>
+</div>
+</body>
+</html>

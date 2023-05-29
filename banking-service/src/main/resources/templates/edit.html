@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>계좌 수정</title>
+</head>
+<body>
+	<h2>계좌 수정</h2>
+	<form method="POST"
+		th:action="@{/accounts/{id}/edit(id=${account.get().id})}">
+		<!-- account이 존재하는 경우 -->
+		<div th:if="${account.isPresent()}">
+			<label>고객명:</label> <input type="text" id="customerName" name="customerName"
+				th:value="${account.get().customerName}" required /><br /> 
+			<label>계좌 별칭:</label>
+			<input type="text" id="accountAlias" name="accountAlias"
+				th:value="${account.get().accountAlias}" required /><br /> 
+			<label>잔액:</label>
+			<input type="text" id="balance" name="balance"
+				th:value="${account.get().balance}" required /><br /> 
+			<label>비고:</label>
+			<input type="text" id="remark" name="remark"
+				th:value="${account.get().remark}" required /><br /> 
+			<button type="submit">저장</button>
+		</div>
+	</form>
+
+</body>
+</html>
+

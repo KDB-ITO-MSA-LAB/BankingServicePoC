@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Account List</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+	<h1>Account List</h1>
+
+	<a href="/accounts/add">Add Account</a>
+	<table>
+		<thead>
+			<tr>
+				<th>고객명</th>
+				<th>계좌 별칭</th>
+				<th>잔액</th>
+				<th>비고</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="account : ${accounts}">
+				<td th:text="${account.customerName}"></td>
+				<td th:text="${account.accountAlias}"></td>
+				<td th:text="${account.balance}"></td>
+				<td th:text="${account.remark}"></td>
+				<td><a th:href="@{/accounts/{id}(id=${account.id})}">View</a> <a
+					th:href="@{/accounts/{id}/edit(id=${account.id})}">Edit</a> <a
+					th:href="@{/accounts/{id}/delete(id=${account.id})}">Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>

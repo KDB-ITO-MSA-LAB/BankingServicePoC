@@ -24,6 +24,17 @@ dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.kafka:spring-kafka'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.15.0-rc3'
+    
+	
+	
 }
 
 tasks.named('test') {

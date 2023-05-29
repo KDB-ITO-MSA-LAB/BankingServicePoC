@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>계좌 추가</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<h1>계좌 추가</h1>
+
+<form action="/accounts/add" method="post">
+    <label for="customerName">고객명:</label>
+    <input type="text" id="customerName" name="customerName" required><br />
+
+    <label for="accountAlias">계좌 별칭:</label>
+    <input type="text" id="accountAlias" name="accountAlias" required><br />
+
+    <label for="balance">잔액:</label>
+    <input type="text" id="balance" name="balance" required><br />
+
+    <label for="remark">비고:</label>
+    <input type="text" id="remark" name="remark" required><br />
+
+    <button type="submit">저장</button>
+	</form>
+</body>
+</html>
+
