@@ -8,7 +8,7 @@ public class BasicController {
 	
 	@GetMapping("/msalab")
 	public String defaultFunction() {
-		return "welcome";
+		return "./welcome";
 	} 
 
 }

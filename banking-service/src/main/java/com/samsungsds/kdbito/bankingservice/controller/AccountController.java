@@ -30,7 +30,7 @@ public class AccountController {
 		List<Account> accounts = accountService.getAllAccounts();
 		model.addAttribute("accounts", accounts);
 		logger.info("getAccounts 호출!!!" + accounts.toString());
-		return "accounts";
+		return "./accounts";
 	}
 
 	@GetMapping("/accounts/{id}")
@@ -41,13 +41,13 @@ public class AccountController {
 		} else {
 			model.addAttribute("errorMessage", "해당 계좌를 찾을 수 없습니다.");
 		}
-		return "view";
+		return "./view";
 	}
 
 	@GetMapping("/accounts/add")
 	public String openAccountForm(Model model) {
 		model.addAttribute("account", new Account());
-		return "add";
+		return "./add";
 	}
 
 	@PostMapping("/accounts/add")
@@ -65,7 +65,7 @@ public class AccountController {
 		logger.info("editAccountForm 호출!!!" + account.toString());
 
 		model.addAttribute("account", account);
-		return "edit";
+		return "./edit";
 	}
 
 	@PostMapping("/accounts/{id}/edit")
